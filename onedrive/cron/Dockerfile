@@ -6,7 +6,7 @@ RUN apt update && apt upgrade -y && apt autoremove -y && apt install python3 pyt
 
 COPY . .
 
-ENV IP_PING="1270.0.0.1"
+ENV IP_PING="127.0.0.1:8080"
 
 ENV TOKEN="token"
 
