@@ -16,6 +16,8 @@ ENV E5_CLIENT_SECRET="secret"
 
 ENV E5_REFRESH_TOKEN="token"
 
+ENV WEB_APP_PASSWORD="pass"
+
 EXPOSE 8080
 
 RUN chmod +x run.sh
