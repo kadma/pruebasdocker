@@ -14,6 +14,6 @@ ENV E5_REFRESH_TOKEN="token"
 
 EXPOSE 8080
 
-RUN chmod +x test.sh
+RUN chmod +x run.sh
 
-ENTRYPOINT ./test.sh
+ENTRYPOINT ./run.sh
