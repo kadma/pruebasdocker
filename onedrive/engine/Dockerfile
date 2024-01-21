@@ -8,6 +8,8 @@ RUN apt update && apt upgrade -y && apt autoremove -y && apt install python3 pyt
 
 RUN git clone https://github.com/TheCaduceus/Microsoft-E5-Auto-Renewal
 
+RUN pip install -r requirements.txt
+
 ENV E5_CLIENT_ID="id"
 
 ENV E5_CLIENT_SECRET="secret"
