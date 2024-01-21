@@ -2,7 +2,7 @@ FROM ubuntu
 
 WORKDIR /app
 
-RUN apt update && apt upgrade -y && apt autoremove -y && apt install python3 python3-pip -y && apt install git nano wget -y
+RUN apt update && apt upgrade -y && apt autoremove -y && apt install python3 python3-pip -y && apt install git nano wget curl -y
 
 COPY . .
 
