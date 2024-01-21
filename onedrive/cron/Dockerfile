@@ -8,13 +8,13 @@ RUN pip install schedule
 
 COPY . .
 
-ENV IP_PING="127.0.0.1:8080"
+ENV IP_PING="http://127.0.0.1:8080/call"
 
 ENV TOKEN="token"
 
 ENV PASSWORD_WEB="pass"
 
-ENV SUPERCOMANDO='curl -X POST -H "Content-Type: application/json" -d "{"password":PASSWORD_WEB ,"refresh_token":TOKEN}" "http://IP_PING/call"'
+ENV SUPERCOMANDO='curl -X POST -H "Content-Type: application/json" -d ''{"password":$PASSWORD_WEB ,"refresh_token":$TOKEN}'' "$IP_PING"'
 
 RUN chmod +x run.sh
 
