@@ -2,13 +2,13 @@ FROM ubuntu
 
 WORKDIR /app
 
-COPY . .
-
 RUN apt update && apt upgrade -y && apt autoremove -y && apt install python3 python3-pip -y && apt install git nano wget -y
 
 RUN git clone https://github.com/TheCaduceus/Microsoft-E5-Auto-Renewal
 
 RUN pip install -r requirements.txt
+
+COPY . .
 
 ENV E5_CLIENT_ID="id"
 
