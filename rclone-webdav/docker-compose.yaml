@@ -1,0 +1,11 @@
+---
+services:
+  rclone-webdav:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: rclone-webdav
+    volumes:
+      - /path/to/config:/root/.config/rclone
+    restart: unless-stopped
+	network_mode: bridge
