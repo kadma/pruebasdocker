@@ -1,4 +1,4 @@
-## actualmente da erorr
+## actualmente da error
 
 #### manual
 ```sh
