@@ -14,7 +14,7 @@ ENV TOKEN="token"
 
 ENV PASSWORD_WEB="pass"
 
-ENV SUPERCOMANDO='curl -X POST -H "Content-Type: application/json" -d ''{"password":$PASSWORD_WEB ,"refresh_token":$TOKEN}'' "$IP_PING"'
+ENV SUPERCOMANDO='curl -X POST -H "Content-Type: application/json" -d '{"password": "$PASSWORD_WEB" ,"refresh_token": "$TOKEN"}' "$IP_PING"'
 
 RUN chmod +x run.sh
 
