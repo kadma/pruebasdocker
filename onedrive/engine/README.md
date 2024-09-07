@@ -1,4 +1,4 @@
-## sin actualziar
+## sin actualizar
 
 #### manual
 ```sh
