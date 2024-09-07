@@ -5,6 +5,8 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: rclone-gui
+    ports:
+      - 5572:5572
     volumes:
       - /path/to/config:/root/.config/rclone
     restart: unless-stopped
