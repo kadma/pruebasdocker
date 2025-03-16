@@ -1,25 +1,26 @@
-FROM ubuntu
+# Usar una imagen base más ligera y específica
+FROM python:3.9-slim
 
+# Establecer el directorio de trabajo
 WORKDIR /app
 
-RUN apt update && apt upgrade -y && apt autoremove -y && apt install python3 python3-pip -y && apt install git nano wget -y
+# Instalar dependencias del sistema y limpiar caché en un solo RUN
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends git wget && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
+# Clonar el repositorio
 RUN git clone https://github.com/TheCaduceus/Microsoft-E5-Auto-Renewal /app
 
-RUN pip install -r requirements.txt
+# Instalar dependencias de Python
+RUN pip install --no-cache-dir -r requirements.txt
 
+# Copiar el resto de los archivos
 COPY . .
 
-ENV E5_CLIENT_ID="id"
-
-ENV E5_CLIENT_SECRET="secret"
-
-ENV E5_REFRESH_TOKEN="token"
-
-ENV WEB_APP_PASSWORD="pass"
-
+# Exponer el puerto
 EXPOSE 8080
 
-RUN chmod +x run.sh
-
-ENTRYPOINT ./run.sh
+# Establecer el comando de entrada
+CMD ["python", "main.py"]

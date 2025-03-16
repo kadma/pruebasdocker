@@ -1,0 +1,16 @@
+---
+services:
+  odengin:
+    build: .
+    container_name: odengin
+    environment:
+      - E5_CLIENT_ID=id
+      - E5_CLIENT_SECRET=secret
+      - E5_REFRESH_TOKEN=tokenit
+      - WEB_APP_PASSWORD=123
+      - E5_WEB_APP_PASSWORD=123
+    ports:
+      - 8089:8080
+    restart: unless-stopped
+    hostname: odengin
+    network_mode: bridge

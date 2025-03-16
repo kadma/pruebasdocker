@@ -1,0 +1,12 @@
+---
+services:
+  odcron:
+    build: .
+    container_name: odcron
+    environment:
+      - IP=host:8080  # Cambia esto por la IP y puerto deseado
+      - PASSWORD=pass           # Cambia esto por la contraseña deseada
+      - REFRESH_TOKEN=tokenit   # Cambia esto por el token deseado
+    restart: unless-stopped
+    hostname: odcron
+    network_mode: bridge
