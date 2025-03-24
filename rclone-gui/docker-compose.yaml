@@ -5,9 +5,11 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: rclone-gui
-    ports:
-      - 5572:5572
+    environment:
+      - USER_RCLONE=adm
+      - PASSWORD_RCLONE=pass
     volumes:
       - /path/to/config:/root/.config/rclone
     restart: unless-stopped
     network_mode: bridge
+    hostname: rclone-gui
